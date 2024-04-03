@@ -41,13 +41,13 @@ const App = () => {
       };
       setMessages([welcomeMessage]);
     }
-  }, [isOpen]);
+  }, [isOpen, messages]);
   useEffect(() => {
     if (answer !== '') {
       const assistantMessage = messages[messages.length - 1];
       assistantMessage.text = answer;
     }
-  }, [answer]);
+  }, [answer, messages]);
   const handleInputChange = (e) => {
     setInputText(e.target.value);
     setInputHeight(e.target.scrollHeight);
